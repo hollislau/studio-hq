@@ -1,1 +1,1 @@
-# studio-hq
+# StudioHQ

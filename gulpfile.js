@@ -12,7 +12,7 @@ const webpack = require("webpack-stream");
 var lintAppFiles = ["app/**/*.js"];
 var lintServerFiles = ["gulpfile.js", "index.js", "server.js"];
 var buildFiles = ["babel-polyfill", "app/js/entry.js"];
-var staticFiles = ["app/**/*.html", "app/**/*.png"];
+var staticFiles = ["app/**/*.html", "app/**/*.png", "app/**/*.svg"];
 
 gulp.task("lint:app", () => {
   return gulp.src(lintAppFiles)

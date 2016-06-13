@@ -1,0 +1,23 @@
+@function font-color($key: primary) {
+  @if map-has-key($color-font, $key) {
+    @return map-get($color-font, $key);
+  }
+
+  @error "Cannot find `#{$key}` in $color-font!";
+}
+
+@function background-color($key: primary) {
+  @if map-has-key($color-background, $key) {
+    @return map-get($color-background, $key);
+  }
+
+  @error "Cannot find `#{$key}` in $color-background!";
+}
+
+@function border-color($key) {
+  @if map-has-key($color-border, $key) {
+    @return map-get($color-border, $key);
+  }
+
+  @error "Cannot find `#{$key}` in $color-border!";
+}

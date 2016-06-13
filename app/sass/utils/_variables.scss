@@ -1,0 +1,41 @@
+// ***** Typography *****
+$font-primary: "proxima-nova", sans-serif;
+$font-secondary: "usual", sans-serif;
+
+$font-regular: 400;
+$font-medium: 500;
+$font-heavy: 600;
+
+$font-base: 16px;
+
+$font-tiny: 0.875rem;    // 14px
+$font-small: 0.9375rem;  // 15px
+$font-normal: 1rem;      // 16px
+$font-large: 1.125rem;   // 18px
+$font-larger: 1.25rem;   // 20px
+$font-huge: 1.875rem;    // 30px
+
+// ***** Colors *****
+$color-font: (
+  primary: #3A405B,
+  secondary: #3D2C2F,
+  blend: #ABAFC3,
+  highlight: #508DB4,
+  cancel: #7A7977,
+  save: #FFFFFF
+);
+
+$color-background: (
+  primary: #FBFCFD,
+  secondary: #FFFFFF,
+  offset: #FDFDFD,
+  disabled: #ABAFC3,
+  enabled: #78AF3B
+);
+
+$color-borders: (
+  highlight: #508DB4,
+  form: #E7EAF1,
+  underline: #ABAFC3,
+  cancel: #7A7977
+);

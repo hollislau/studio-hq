@@ -16,7 +16,7 @@ $font-larger: 1.25rem;   // 20px
 $font-huge: 1.875rem;    // 30px
 
 // ***** Colors *****
-$color-font: (
+$font-colors: (
   primary: #3A405B,
   secondary: #3D2C2F,
   blend: #ABAFC3,
@@ -25,7 +25,7 @@ $color-font: (
   save: #FFFFFF
 );
 
-$color-background: (
+$background-colors: (
   primary: #FBFCFD,
   secondary: #FFFFFF,
   offset: #FDFDFD,
@@ -33,9 +33,22 @@ $color-background: (
   enabled: #78AF3B
 );
 
-$color-borders: (
+$border-colors: (
   highlight: #508DB4,
   form: #E7EAF1,
   underline: #ABAFC3,
   cancel: #7A7977
+);
+
+// ***** Icons *****
+$icons: (
+  plus "\e900",
+  chevron "\e901",
+  classes "\e902",
+  dashboard "\e903",
+  logout "\e904",
+  payment "\e905",
+  settings "\e906",
+  staff "\e907",
+  students "\e908"
 );

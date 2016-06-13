@@ -7,12 +7,11 @@ html {
   box-sizing: inherit;
 }
 
-body, header, main, section, ul, li {
+body, header, main, section, h1, h2, h3, ul, li, p, a {
   margin: 0;
-}
-
-ul {
   padding: 0;
+  font-weight: normal;
+  text-decoration: none;
 }
 
 li {

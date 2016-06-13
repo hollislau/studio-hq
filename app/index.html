@@ -47,25 +47,43 @@
         <ul>
           <li>
             <a href="">Seattle, 4th & Pike</a>
-            <form action="">
-              <label for="location-name">Location Name</label>
-              <input id="location-name" type="text" placeholder="Location Name">
-              <label for="contact-email">Contact Email</label>
-              <input id="contact-email" type="text" placeholder="Contact Email">
-              <label for="address">Address</label>
-              <input id="address" type="text" placeholder="Address">
-              <label for="address-two">Address 2</label>
-              <input id="address-two" type="text" placeholder="Address 2">
-              <label for="reply-email">Reply To Email</label>
-              <input id="reply-email" type="text" placeholder="Reply To Email">
-              <label for="city">City</label>
-              <input id="city" type="text" placeholder="City">
-              <label for="state">State</label>
-              <input id="state" type="text" placeholder="State">
-              <label for="zip">Zip</label>
-              <input id="zip" type="text" placeholder="Zip">
-              <label for="phone">Phone</label>
-              <input id="phone" type="text" placeholder="Phone">
+            <form id="one" action="">
+              <div class="huge">
+                <label for="location-name">Location Name</label>
+                <input id="location-name" type="text" placeholder="Location Name">
+              </div>
+              <div class="long right">
+                <label for="contact-email">Contact Email</label>
+                <input id="contact-email" type="text" placeholder="Contact Email">
+              </div>
+              <div class="medium">
+                <label for="address">Address</label>
+                <input id="address" type="text" placeholder="Address">
+              </div>
+              <div class="medium">
+                <label for="address-two">Address 2</label>
+                <input id="address-two" type="text" placeholder="Address 2">
+              </div>
+              <div class="long right">
+                <label for="reply-email">Reply To Email</label>
+                <input id="reply-email" type="text" placeholder="Reply To Email">
+              </div>
+              <div class="medium">
+                <label for="city">City</label>
+                <input id="city" type="text" placeholder="City">
+              </div>
+              <div class="short">
+                <label for="state">State</label>
+                <input id="state" type="text" placeholder="State">
+              </div>
+              <div class="short">
+                <label for="zip">Zip</label>
+                <input id="zip" type="text" placeholder="Zip">
+              </div>
+              <div class="medium right">
+                <label for="phone">Phone</label>
+                <input id="phone" type="text" placeholder="Phone">
+              </div>
             </form>
           </li>
           <li>
@@ -74,7 +92,7 @@
         </ul>
         <a href=""><span class="icon-plus"></span>Create New Location</a>
         <button>Cancel</button>
-        <button>Save Changes</button>
+        <button type="submit" form="one">Save Changes</button>
       </section>
     </main>
     <script src="js/main.js"></script>

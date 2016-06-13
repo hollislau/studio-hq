@@ -4,3 +4,28 @@ body {
   background-color: background-color();
   width: 100%;
 }
+
+input, button {
+  font-family: inherit;
+}
+
+input {
+  font-size: $font-large;
+  font-weight: $font-regular;
+  color: font-color(secondary);
+  padding: 0.3em 0;
+  border-bottom: 1px solid border-color(underline);
+  &:focus {
+    border-bottom: 2px solid border-color(highlight);
+    padding-bottom: calc(0.3em - 1px);
+  }
+  &::placeholder {
+    color: font-color(blend);
+  }
+}
+
+label {
+  font-size: $font-small;
+  color: font-color(blend);
+  display: block;
+}

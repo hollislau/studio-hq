@@ -21,4 +21,8 @@ form {
   .right {
     margin-left: 2.5%;
   }
+  .ng-hide:not(.ng-hide-animate) {
+    display: block !important;
+    visibility: hidden;
+  }
 }

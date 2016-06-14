@@ -57,7 +57,8 @@ gulp.task("webpack:dev", () => {
         ]
       }
     }))
-    .pipe(gulp.dest("build/js"));
+    .pipe(gulp.dest("build/js"))
+    .pipe(livereload());
 });
 
 gulp.task("webpack:pro", () => {

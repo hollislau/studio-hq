@@ -10,16 +10,17 @@
     <script>try{Typekit.load({ async: true });}catch(e){}</script>
     <link rel="stylesheet" href="css/main.css">
   </head>
-  <body>
+  <body data-ng-app="studioApp">
     <header>
       <h1>StudioHQ</h1>
       <img src="images/logo.svg" alt="StudioHQ logo">
     </header>
-    <main>
+    <main data-ng-controller="LocationCtrl as locationctrl">
       <h2>Happy Dance & Music</h2>
       <ul>
-        <li><a href="">Seattle, 4th & Pike</a></li>
-        <li><a href="">Seattle, 5th & Pine</a></li>
+        <li data-ng-repeat="location in locationctrl.locations">
+          <a href="">{{ location.name }}</a>
+        </li>
       </ul>
       <nav>
         <ul>
@@ -45,49 +46,11 @@
           </ul>
         </nav>
         <ul>
-          <li>
-            <a href="">Seattle, 4th & Pike</a>
-            <form id="one" action="">
-              <div class="huge">
-                <label for="location-name">Location Name</label>
-                <input id="location-name" type="text" placeholder="Location Name">
-              </div>
-              <div class="long right">
-                <label for="contact-email">Contact Email</label>
-                <input id="contact-email" type="text" placeholder="Contact Email">
-              </div>
-              <div class="medium">
-                <label for="address">Address</label>
-                <input id="address" type="text" placeholder="Address">
-              </div>
-              <div class="medium">
-                <label for="address-two">Address 2</label>
-                <input id="address-two" type="text" placeholder="Address 2">
-              </div>
-              <div class="long right">
-                <label for="reply-email">Reply To Email</label>
-                <input id="reply-email" type="text" placeholder="Reply To Email">
-              </div>
-              <div class="medium">
-                <label for="city">City</label>
-                <input id="city" type="text" placeholder="City">
-              </div>
-              <div class="short">
-                <label for="state">State</label>
-                <input id="state" type="text" placeholder="State">
-              </div>
-              <div class="short">
-                <label for="zip">Zip</label>
-                <input id="zip" type="text" placeholder="Zip">
-              </div>
-              <div class="medium right">
-                <label for="phone">Phone</label>
-                <input id="phone" type="text" placeholder="Phone">
-              </div>
-            </form>
-          </li>
-          <li>
-            <a href="">Seattle, 5th & Pine</a>
+          <li data-ng-repeat="location in locationctrl.locations">
+            <a href="">{{ location.name }}</a>
+
+            <location-form data-location="location"></location-form>
+          
           </li>
         </ul>
         <a href=""><span class="icon-plus"></span>Create New Location</a>

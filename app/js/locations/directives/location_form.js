@@ -9,6 +9,7 @@ module.exports = function (app) {
         location: "="
       },
       link: function (scope, element, attrs, controller) {
+        scope.enable = controller.enable;
         scope.save = controller.save;
       }
     };

@@ -29,3 +29,8 @@ label {
   color: font-color(blend);
   display: block;
 }
+
+button {
+  &:disabled {
+  }
+}

@@ -1,9 +1,9 @@
 <form data-ng-submit="save(location)" id="form-{{ location._id }}">
   <div class="huge">
-    <label data-ng-show="location.name" for="location-name">Location Name</label>
+    <label data-ng-show="location.display" for="location-name">Location Name</label>
     <input
       data-ng-model="location.name"
-      data-ng-model-options="{ updateOn: 'submit' }"
+      data-ng-change="enable()"
       id="location-name"
       type="text"
       placeholder="Location Name">
@@ -13,6 +13,7 @@
     <input
       data-ng-model="location.contactEmail"
       data-ng-model-options="{ allowInvalid: true }"
+      data-ng-change="enable()"
       id="contact-email"
       type="email"
       placeholder="Contact Email">
@@ -21,6 +22,7 @@
     <label data-ng-show="location.address" for="address">Address</label>
     <input
       data-ng-model="location.address"
+      data-ng-change="enable()"
       id="address"
       type="text"
       placeholder="Address">
@@ -29,6 +31,7 @@
     <label data-ng-show="location.addressTwo" for="address-two">Address 2</label>
     <input
       data-ng-model="location.addressTwo"
+      data-ng-change="enable()"
       id="address-two"
       type="text"
       placeholder="Address 2">
@@ -38,6 +41,7 @@
     <input
       data-ng-model="location.replyEmail"
       data-ng-model-options="{ allowInvalid: true }"
+      data-ng-change="enable()"
       id="reply-email"
       type="email"
       placeholder="Reply To Email">
@@ -46,6 +50,7 @@
     <label data-ng-show="location.city" for="city">City</label>
     <input
       data-ng-model="location.city"
+      data-ng-change="enable()"
       id="city"
       type="text"
       placeholder="City">
@@ -54,6 +59,7 @@
     <label data-ng-show="location.state" for="state">State</label>
     <input
       data-ng-model="location.state"
+      data-ng-change="enable()"
       id="state"
       type="text"
       placeholder="State">
@@ -62,6 +68,7 @@
     <label data-ng-show="location.zip" for="zip">Zip</label>
     <input
       data-ng-model="location.zip"
+      data-ng-change="enable()"
       id="zip"
       type="text"
       placeholder="Zip">
@@ -70,6 +77,7 @@
     <label data-ng-show="location.phone" for="phone">Phone</label>
     <input
       data-ng-model="location.phone"
+      data-ng-change="enable()"
       id="phone"
       type="tel"
       placeholder="Phone">

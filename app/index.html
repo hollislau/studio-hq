@@ -19,7 +19,7 @@
       <h2>Happy Dance & Music</h2>
       <ul>
         <li data-ng-repeat="location in locationctrl.locations">
-          <a href="">{{ location.name }}</a>
+          <a href="">{{ location.display }}</a>
         </li>
       </ul>
       <nav>
@@ -46,18 +46,28 @@
           </ul>
         </nav>
         <ul>
-          <li
-            data-ng-repeat="location in locationctrl.locations"
-            data-ng-click="locationctrl.edit(location)">
-            {{ location.name }}
+          <li data-ng-repeat="location in locationctrl.locations">
+            <span data-ng-click="locationctrl.edit(location)">
+              {{ location.display }}
+              <span class="icon-chevron"></span>
+            </span>
 
             <location-form data-ng-if="location.editing" data-location="location"></location-form>
 
           </li>
         </ul>
         <a href=""><span class="icon-plus"></span>Create New Location</a>
-        <button>Cancel</button>
-        <button type="submit" form="form-{{ locationctrl.focus._id }}">Save Changes</button>
+        <button
+          data-ng-disabled="locationctrl.disabled"
+          data-ng-click="locationctrl.cancel()">
+          Cancel
+        </button>
+        <button
+          data-ng-disabled="locationctrl.disabled"
+          form="form-{{ locationctrl.focus._id }}"
+          type="submit">
+          Save Changes
+        </button>
       </section>
     </main>
     <script src="js/main.js"></script>

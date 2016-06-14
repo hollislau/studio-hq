@@ -25,4 +25,16 @@ form {
     display: block !important;
     visibility: hidden;
   }
+  #state {
+    width: 85%;
+  }
+  .icon-chevron {
+    border-bottom: 1px solid border-color(underline);
+    padding-bottom: 10px;
+    margin-left: -5px;
+  }
+  .dropdown {
+    position: absolute;
+    z-index: 100;
+  }
 }

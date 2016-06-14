@@ -1,7 +1,7 @@
 const angular = require("angular");
 
 module.exports = function (app) {
-  app.controller("SettingsCtrl", function () {
+  app.controller("SettingsCtrl", ["$timeout", function ($timeout) {
     this.locations = [
       {
         display: "Seattle, 4th & Pike",
@@ -14,8 +14,7 @@ module.exports = function (app) {
         contactEmail: "",
         replyEmail: "",
         phone: "",
-        _id: 0,
-        editing: false
+        _id: 0
       },
       {
         display: "Seattle, 5th & Pine",
@@ -28,21 +27,21 @@ module.exports = function (app) {
         contactEmail: "",
         replyEmail: "",
         phone: "",
-        _id: 1,
-        editing: false
+        _id: 1
       }
     ];
+    this.states = ["AK", "CA", "OR", "NY", "WA"];
     this.view = "locations";
-    this.disabled = true;
+    this.btnsDisabled = true;
 
-    this.enable = function () {
-      this.disabled = false;
+    this.enableBtns = function () {
+      this.btnsDisabled = false;
     }.bind(this);
 
     this.cancel = function () {
       angular.copy(this.focus.backup, this.focus);
       this.focus = null;
-      this.disabled = true;
+      this.btnsDisabled = true;
     };
 
     this.edit = function (location) {
@@ -58,8 +57,27 @@ module.exports = function (app) {
       location.editing = false;
       location.display = location.name;
       location.backup = null;
+      location.dropdown = false;
       this.focus = null;
-      this.disabled = true;
+      this.btnsDisabled = true;
     }.bind(this);
-  });
+
+    this.showDropdown = function (location) {
+      location.dropdown = true;
+    };
+
+    this.hideDropdown = function (location) {
+      $timeout(() => {
+        location.dropdown = false;
+      }, 10);
+    };
+
+    this.setState = function (location, state) {
+      if (location.state !== state) {
+        location.state = state;
+        this.btnsDisabled = false;
+      }
+      location.dropdown = false;
+    }.bind(this);
+  }]);
 };

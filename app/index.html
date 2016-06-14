@@ -54,7 +54,11 @@
                 <span class="icon-chevron"></span>
               </span>
 
-              <location-form data-ng-if="location.editing" data-location="location"></location-form>
+              <location-form
+                data-ng-if="location.editing"
+                data-location="location"
+                data-states="settingsctrl.states">
+              </location-form>
 
             </li>
             <li>
@@ -62,12 +66,12 @@
             </li>
           </ul>
           <button
-            data-ng-disabled="settingsctrl.disabled"
+            data-ng-disabled="settingsctrl.btnsDisabled"
             data-ng-click="settingsctrl.cancel()">
             Cancel
           </button>
           <button
-            data-ng-disabled="settingsctrl.disabled"
+            data-ng-disabled="settingsctrl.btnsDisabled"
             form="form-{{ settingsctrl.focus._id }}"
             type="submit">
             Save Changes

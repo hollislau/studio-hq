@@ -6,11 +6,15 @@ module.exports = function (app) {
       require: "^ngController",
       replace: true,
       scope: {
-        location: "="
+        location: "=",
+        states: "="
       },
       link: function (scope, element, attrs, controller) {
-        scope.enable = controller.enable;
+        scope.enableBtns = controller.enableBtns;
         scope.save = controller.save;
+        scope.showDropdown = controller.showDropdown;
+        scope.hideDropdown = controller.hideDropdown;
+        scope.setState = controller.setState;
       }
     };
   });

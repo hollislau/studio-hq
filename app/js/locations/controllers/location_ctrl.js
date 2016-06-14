@@ -12,7 +12,9 @@ module.exports = function (app) {
         zip: "",
         contactEmail: "",
         replyEmail: "",
-        phone: ""
+        phone: "",
+        _id: 0,
+        editing: false
       },
       {
         name: "Seattle, 5th & Pine",
@@ -23,8 +25,21 @@ module.exports = function (app) {
         zip: "",
         contactEmail: "",
         replyEmail: "",
-        phone: ""
+        phone: "",
+        _id: 1,
+        editing: false
       }
     ];
+
+    this.edit = function (location) {
+      if (this.focus) this.focus.editing = false;
+
+      location.editing = true;
+      this.focus = location;
+    };
+
+    this.save = function (location) {
+      location.editing = false;
+    };
   });
 };

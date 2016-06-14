@@ -7,6 +7,9 @@ module.exports = function (app) {
       replace: true,
       scope: {
         location: "="
+      },
+      link: function (scope, element, attrs, controller) {
+        scope.save = controller.save;
       }
     };
   });

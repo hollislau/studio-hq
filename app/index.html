@@ -46,16 +46,18 @@
           </ul>
         </nav>
         <ul>
-          <li data-ng-repeat="location in locationctrl.locations">
-            <a href="">{{ location.name }}</a>
+          <li
+            data-ng-repeat="location in locationctrl.locations"
+            data-ng-click="locationctrl.edit(location)">
+            {{ location.name }}
 
-            <location-form data-location="location"></location-form>
-          
+            <location-form data-ng-if="location.editing" data-location="location"></location-form>
+
           </li>
         </ul>
         <a href=""><span class="icon-plus"></span>Create New Location</a>
         <button>Cancel</button>
-        <button type="submit" form="one">Save Changes</button>
+        <button type="submit" form="form-{{ locationctrl.focus._id }}">Save Changes</button>
       </section>
     </main>
     <script src="js/main.js"></script>

@@ -1,8 +1,9 @@
-<form data-ng-submit="" id="one">
+<form data-ng-submit="save(location)" id="form-{{ location._id }}">
   <div class="huge">
     <label data-ng-show="location.name" for="location-name">Location Name</label>
     <input
       data-ng-model="location.name"
+      data-ng-model-options="{ updateOn: 'submit' }"
       id="location-name"
       type="text"
       placeholder="Location Name">
@@ -11,8 +12,9 @@
     <label data-ng-show="location.contactEmail" for="contact-email">Contact Email</label>
     <input
       data-ng-model="location.contactEmail"
+      data-ng-model-options="{ allowInvalid: true }"
       id="contact-email"
-      type="text"
+      type="email"
       placeholder="Contact Email">
   </div>
   <div class="medium">
@@ -35,8 +37,9 @@
     <label data-ng-show="location.replyEmail" for="reply-email">Reply To Email</label>
     <input
       data-ng-model="location.replyEmail"
+      data-ng-model-options="{ allowInvalid: true }"
       id="reply-email"
-      type="text"
+      type="email"
       placeholder="Reply To Email">
   </div>
   <div class="medium">
@@ -68,7 +71,7 @@
     <input
       data-ng-model="location.phone"
       id="phone"
-      type="text"
+      type="tel"
       placeholder="Phone">
   </div>
 </form>

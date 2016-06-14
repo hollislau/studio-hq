@@ -12,7 +12,7 @@
   </head>
   <body data-ng-app="studioApp">
     <header>
-      <h1>StudioHQ</h1>
+      <h1 class="hidden">StudioHQ</h1>
       <img src="images/logo.svg" alt="StudioHQ logo">
     </header>
     <main data-ng-controller="SettingsCtrl as settingsctrl">
@@ -24,41 +24,43 @@
       </ul>
       <nav>
         <ul>
-          <li><a href=""><span class="icon-dashboard"></span>Dashboard</a></li>
-          <li><a href=""><span class="icon-classes"></span>Classes</a></li>
-          <li><a href=""><span class="icon-students"></span>Students</a></li>
-          <li><a href=""><span class="icon-payment"></span>Payment</a></li>
-          <li><a href=""><span class="icon-staff"></span>Staff</a></li>
-          <li><a href=""><span class="icon-settings"></span>Settings</a></li>
-          <li><a href=""><span class="icon-logout"></span>Log Out</a></li>
+          <li><a href="#/dashboard"><span class="icon-dashboard"></span>Dashboard</a></li>
+          <li><a href="#/classes"><span class="icon-classes"></span>Classes</a></li>
+          <li><a href="#/students"><span class="icon-students"></span>Students</a></li>
+          <li><a href="#/payment"><span class="icon-payment"></span>Payment</a></li>
+          <li><a href="#/staff"><span class="icon-staff"></span>Staff</a></li>
+          <li><a href="#/settings"><span class="icon-settings"></span>Settings</a></li>
+          <li><a href="#/logout"><span class="icon-logout"></span>Log Out</a></li>
         </ul>
       </nav>
       <section>
         <h3>Studio Settings</h3>
         <nav>
           <ul>
-            <li data-ng-click="settingsctrl.view = 'company'">Company</li>
-            <li data-ng-click="settingsctrl.view = 'locations'">Locations</li>
-            <li data-ng-click="settingsctrl.view = 'class'">Class Types</li>
-            <li data-ng-click="settingsctrl.view = 'managers'">Managers</li>
-            <li data-ng-click="settingsctrl.view = 'billing'">Billing Info</li>
-            <li data-ng-click="settingsctrl.view = 'merchant'">Merchant Account</li>
+            <li data-ng-click="settingsctrl.view = 'company'"><a href="#/settings/company">Company</a></li>
+            <li data-ng-click="settingsctrl.view = 'locations'"><a href="#/settings/locations">Locations</a></li>
+            <li data-ng-click="settingsctrl.view = 'class'"><a href="#/settings/classes">Class Types</a></li>
+            <li data-ng-click="settingsctrl.view = 'managers'"><a href="#/settings/managers">Managers</a></li>
+            <li data-ng-click="settingsctrl.view = 'billing'"><a href="#/settings/billing">Billing Info</a></li>
+            <li data-ng-click="settingsctrl.view = 'merchant'"><a href="#/settings/merchant">Merchant Account</a></li>
           </ul>
         </nav>
         <section data-ng-if="settingsctrl.view === 'locations'">
-          <h4>Locations</h4>
+          <h4 class="hidden">Locations</h4>
           <ul>
             <li data-ng-repeat="location in settingsctrl.locations">
-              <span data-ng-click="settingsctrl.edit(location)">
-                {{ location.display }}
-                <span class="icon-chevron"></span>
-              </span>
+              <a href="">
+                <span data-ng-click="settingsctrl.edit(location)">
+                  {{ location.display }}
+                  <span class="icon-chevron"></span>
+                </span>
+              </a>
 
-              <location-form
-                data-ng-if="location.editing"
-                data-location="location"
-                data-states="settingsctrl.states">
-              </location-form>
+                <location-form
+                  data-ng-if="location.editing"
+                  data-location="location"
+                  data-states="settingsctrl.states">
+                </location-form>
 
             </li>
             <li>

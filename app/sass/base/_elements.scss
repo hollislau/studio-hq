@@ -34,3 +34,10 @@ button {
   &:disabled {
   }
 }
+
+a {
+  color: inherit;
+  &:focus {
+    color: red;
+  }
+}

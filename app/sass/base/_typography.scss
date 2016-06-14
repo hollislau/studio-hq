@@ -12,6 +12,7 @@
 @each $icon in $icons {
   .icon-#{nth($icon, 1)} {
     @extend %icon-font;
+    color: inherit;
     &:before {
       content: nth($icon, 2);
     }

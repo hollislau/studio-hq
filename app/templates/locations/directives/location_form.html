@@ -55,7 +55,13 @@
       type="text"
       placeholder="City">
   </div>
-  <div class="short">
+  <div class="hidden">
+    <label for="select-state">State</label>
+    <select data-ng-model="location.state" id="select-state">
+      <option data-ng-repeat="state in states" value="{{ state }}">{{ state }}</option>
+    </select>
+  </div>
+  <div class="short" aria-hidden="true">
     <div>
       <label data-ng-show="location.state" for="state">State</label>
       <input
@@ -66,7 +72,7 @@
         id="state"
         type="text"
         placeholder="State">
-        <span class="icon-chevron"></span>
+        <span class="icon-chevron ng-class: { expanded: location.chevronUp }"></span>
     </div>
     <ul data-ng-if="location.dropdown" class="dropdown">
       <li data-ng-repeat="state in states" data-ng-click="setState(location, state)">{{ state }}</li>

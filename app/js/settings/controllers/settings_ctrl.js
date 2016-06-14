@@ -57,19 +57,20 @@ module.exports = function (app) {
       location.editing = false;
       location.display = location.name;
       location.backup = null;
-      location.dropdown = false;
       this.focus = null;
       this.btnsDisabled = true;
     }.bind(this);
 
     this.showDropdown = function (location) {
+      location.chevronUp = true;
       location.dropdown = true;
     };
 
     this.hideDropdown = function (location) {
+      location.chevronUp = false;
       $timeout(() => {
         location.dropdown = false;
-      }, 10);
+      }, 20);
     };
 
     this.setState = function (location, state) {
@@ -77,7 +78,6 @@ module.exports = function (app) {
         location.state = state;
         this.btnsDisabled = false;
       }
-      location.dropdown = false;
     }.bind(this);
   }]);
 };

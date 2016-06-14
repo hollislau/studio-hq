@@ -1,7 +1,7 @@
 const angular = require("angular");
 
 module.exports = function (app) {
-  app.controller("LocationCtrl", function () {
+  app.controller("SettingsCtrl", function () {
     this.locations = [
       {
         display: "Seattle, 4th & Pike",
@@ -32,15 +32,8 @@ module.exports = function (app) {
         editing: false
       }
     ];
-    // this.locationsRef = angular.copy(this.locations);
-    // console.log(this.locationsRef);
-    // console.log(this.locations);
-    // console.log(this.locationsRef == this.locations);
+    this.view = "locations";
     this.disabled = true;
-    //
-    // this.$watchCollection(this.locations, function () {
-    //   this.disabled = false;
-    // });
 
     this.enable = function () {
       this.disabled = false;

@@ -1,3 +1,3 @@
 module.exports = function (app) {
-  require("./location_ctrl")(app);
+  require("./settings_ctrl")(app);
 };

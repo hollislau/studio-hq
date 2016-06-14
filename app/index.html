@@ -15,10 +15,10 @@
       <h1>StudioHQ</h1>
       <img src="images/logo.svg" alt="StudioHQ logo">
     </header>
-    <main data-ng-controller="LocationCtrl as locationctrl">
+    <main data-ng-controller="SettingsCtrl as settingsctrl">
       <h2>Happy Dance & Music</h2>
       <ul>
-        <li data-ng-repeat="location in locationctrl.locations">
+        <li data-ng-repeat="location in settingsctrl.locations">
           <a href="">{{ location.display }}</a>
         </li>
       </ul>
@@ -37,37 +37,42 @@
         <h3>Studio Settings</h3>
         <nav>
           <ul>
-            <li><a href="">Company</a></li>
-            <li><a href="">Locations</a></li>
-            <li><a href="">Class Types</a></li>
-            <li><a href="">Managers</a></li>
-            <li><a href="">Billing Info</a></li>
-            <li><a href="">Merchant Account</a></li>
+            <li data-ng-click="settingsctrl.view = 'company'">Company</li>
+            <li data-ng-click="settingsctrl.view = 'locations'">Locations</li>
+            <li data-ng-click="settingsctrl.view = 'class'">Class Types</li>
+            <li data-ng-click="settingsctrl.view = 'managers'">Managers</li>
+            <li data-ng-click="settingsctrl.view = 'billing'">Billing Info</li>
+            <li data-ng-click="settingsctrl.view = 'merchant'">Merchant Account</li>
           </ul>
         </nav>
-        <ul>
-          <li data-ng-repeat="location in locationctrl.locations">
-            <span data-ng-click="locationctrl.edit(location)">
-              {{ location.display }}
-              <span class="icon-chevron"></span>
-            </span>
+        <section data-ng-if="settingsctrl.view === 'locations'">
+          <h4>Locations</h4>
+          <ul>
+            <li data-ng-repeat="location in settingsctrl.locations">
+              <span data-ng-click="settingsctrl.edit(location)">
+                {{ location.display }}
+                <span class="icon-chevron"></span>
+              </span>
 
-            <location-form data-ng-if="location.editing" data-location="location"></location-form>
+              <location-form data-ng-if="location.editing" data-location="location"></location-form>
 
-          </li>
-        </ul>
-        <a href=""><span class="icon-plus"></span>Create New Location</a>
-        <button
-          data-ng-disabled="locationctrl.disabled"
-          data-ng-click="locationctrl.cancel()">
-          Cancel
-        </button>
-        <button
-          data-ng-disabled="locationctrl.disabled"
-          form="form-{{ locationctrl.focus._id }}"
-          type="submit">
-          Save Changes
-        </button>
+            </li>
+            <li>
+              <span class="icon-plus"></span>Create New Location
+            </li>
+          </ul>
+          <button
+            data-ng-disabled="settingsctrl.disabled"
+            data-ng-click="settingsctrl.cancel()">
+            Cancel
+          </button>
+          <button
+            data-ng-disabled="settingsctrl.disabled"
+            form="form-{{ settingsctrl.focus._id }}"
+            type="submit">
+            Save Changes
+          </button>
+        </section>
       </section>
     </main>
     <script src="js/main.js"></script>

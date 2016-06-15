@@ -14,6 +14,7 @@ var lintServerFiles = ["gulpfile.js", "index.js", "server.js"];
 var buildFiles = ["babel-polyfill", "app/js/entry.js"];
 var staticFiles = [
   "app/**/*.html",
+  "app/**/*.jpg",
   "app/**/*.svg",
   "app/**/*.eot",
   "app/**/*.ttf",

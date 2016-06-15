@@ -2,4 +2,12 @@
   .location-item {
     margin-bottom: -2px;
   }
+  li:last-child{
+    a {
+      color: font-color(highlight);
+      &:hover {
+        color: font-color(hover);
+      }
+    }
+  }
 }

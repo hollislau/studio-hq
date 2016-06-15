@@ -6,11 +6,20 @@
   background-color: background-color(offset);
   > a {
     color: font-color(secondary);
-    > span {
+    > .icon-chevron {
       margin-left: 1%;
+    }
+    .icon-plus {
+      margin-right: 1.5%;
     }
   }
   > form {
     margin-top: 1rem;
+  }
+  .focus {
+    color: font-color(highlight);
+    .icon-chevron {
+      transform: rotate(180deg);
+    }
   }
 }

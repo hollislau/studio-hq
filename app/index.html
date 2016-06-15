@@ -21,6 +21,7 @@
         <a
           data-ng-focus="settingsctrl.linkDropdown = true"
           data-ng-blur="settingsctrl.linkDropdown = false"
+          data-ng-class="{ focus: settingsctrl.linkDropdown }"
           href="#">
           {{ settingsctrl.locations[0].display }}
           <span class="icon-chevron"></span>
@@ -60,6 +61,7 @@
             <li data-ng-repeat="location in settingsctrl.locations" class="location-item">
               <a
                 data-ng-click="settingsctrl.edit(location)"
+                data-ng-class="{ focus: settingsctrl.focus.name === location.name }"
                 href="#/settings/locations/{{ location._id }}">
                 {{ location.display }}
                 <span class="icon-chevron"></span>

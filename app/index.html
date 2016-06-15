@@ -58,10 +58,11 @@
         <section data-ng-if="settingsctrl.view === 'locations'" class="location">
           <h4 class="hidden">Locations</h4>
           <ul>
-            <li data-ng-repeat="location in settingsctrl.locations" class="location-item">
+            <li
+              data-ng-repeat="location in settingsctrl.locations"
+              class="location-item ng-class: { focus: settingsctrl.focus.name === location.name }">
               <a
                 data-ng-click="settingsctrl.edit(location)"
-                data-ng-class="{ focus: settingsctrl.focus.name === location.name }"
                 href="#/settings/locations/{{ location._id }}">
                 {{ location.display }}
                 <span class="icon-chevron"></span>
@@ -78,17 +79,20 @@
               <a href="#/settings/locations/create"><span class="icon-plus"></span>Create New Location</a>
             </li>
           </ul>
-          <button
-            data-ng-disabled="settingsctrl.btnsDisabled"
-            data-ng-click="settingsctrl.cancel()">
-            Cancel
-          </button>
-          <button
-            data-ng-disabled="settingsctrl.btnsDisabled"
-            form="form-{{ settingsctrl.focus._id }}"
-            type="submit">
-            Save Changes
-          </button>
+          <div class="btn-container">
+            <button
+              data-ng-disabled="settingsctrl.btnsDisabled"
+              data-ng-click="settingsctrl.cancel()">
+              Cancel
+            </button>
+            <button
+              data-ng-disabled="settingsctrl.btnsDisabled"
+              ng-class="{ save: !settingsctrl.btnsDisabled }"
+              form="form-{{ settingsctrl.focus._id }}"
+              type="submit">
+              Save Changes
+            </button>
+          </div>
         </section>
       </section>
     </main>

@@ -27,7 +27,7 @@ Plus:                                  #508DB4
 Cancel Button Text:                    Proxima Nova, Regular, 14pt; #7A7977  
 Cancel Border:                         #7A7977  
 Save Button Text:                      Proxima Nova, Regular, 14pt; #FFFFFF  
-Save Background:                       #ABAFC3  
+Save Disabled Background:              #ABAFC3  
 
 ## Location Form
 Location Text Focus:                   Proxima Nova, Medium, 20pt; #508DB4  

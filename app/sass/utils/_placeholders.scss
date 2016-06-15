@@ -1,3 +1,16 @@
+%btn-hover {
+  color: font-color(disabled);
+  background-color: font-color(highlight);
+  border-color: border-color(highlight);
+  cursor: pointer;
+}
+
+%btn-active {
+  background-color: lighten(font-color(highlight), 10%);
+  border-color: lighten(font-color(highlight), 10%);
+  outline: none;
+}
+
 %icon-font {
   font-family: 'icon' !important;
   speak: none;

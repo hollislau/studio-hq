@@ -12,11 +12,18 @@
     .icon-plus {
       margin-right: 1.5%;
     }
+    &:hover {
+      color: font-color(highlight);
+    }
   }
   > form {
     margin-top: 1rem;
   }
-  .focus {
+}
+
+.focus {
+  background-color: background-color(secondary);
+  a {
     color: font-color(highlight);
     .icon-chevron {
       transform: rotate(180deg);

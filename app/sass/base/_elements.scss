@@ -31,13 +31,27 @@ label {
 }
 
 button {
+  font-size: $font-tiny;
+  color: font-color(cancel);
+  padding: 0.7rem 0;
+  border: 1px solid border-color(cancel);
+  border-radius: 4px;
+  &:hover {
+    @extend %btn-hover;
+  }
+  &:active {
+    @extend %btn-active;
+  }
   &:disabled {
+    color: font-color(disabled);
+    background-color: background-color(disabled);
+    border-color: background-color(disabled)
   }
 }
 
 a {
   color: inherit;
   &:focus {
-    color: red;
+    color: font-color(highlight);
   }
 }

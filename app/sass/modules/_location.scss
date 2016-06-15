@@ -1,12 +1,35 @@
 .location {
-  .location-item {
-    margin-bottom: -2px;
+  background-color: background-color(secondary);
+  button {
+    width: 10rem;
+    margin: 0 1%;
   }
   li:last-child{
+    background-color: background-color(secondary);
     a {
       color: font-color(highlight);
       &:hover {
         color: font-color(hover);
+      }
+    }
+  }
+  .location-item {
+    margin-bottom: -2px;
+  }
+  .btn-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem;
+    .save {
+      color: font-color(disabled);
+      background-color: background-color(save);
+      border-color: background-color(save);
+      &:hover {
+        @extend %btn-hover;
+      }
+      &:active {
+        @extend %btn-active;
       }
     }
   }

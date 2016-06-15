@@ -129,7 +129,7 @@ gulp.task("nodemon", () => {
   });
 });
 
-gulp.task("watch", ["nodemon"], () => {
+gulp.task("watch", ["build:dev", "nodemon"], () => {
   livereload.listen();
   gulp.watch("app/**/*.js", ["webpack:dev"]);
   gulp.watch("app/**/*.scss", ["sass:dev"]);

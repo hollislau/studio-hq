@@ -1,6 +1,5 @@
 // ***** Typography *****
 $font-primary: "proxima-nova", sans-serif;
-$font-secondary: "usual", sans-serif;
 
 $font-regular: 400;
 $font-medium: 500;
@@ -29,6 +28,7 @@ $background-colors: (
   primary: #FBFCFD,
   secondary: #FFFFFF,
   offset: #FDFDFD,
+  selected: #FAFCFC,
   disabled: #ABAFC3,
   enabled: #78AF3B
 );

@@ -15,13 +15,22 @@
       <h1 class="hidden">StudioHQ</h1>
       <img src="images/logo.svg" alt="StudioHQ logo">
     </header>
-    <main data-ng-controller="SettingsCtrl as settingsctrl">
+    <main data-ng-controller="SettingsCtrl as settingsctrl" class="app">
       <h2>Happy Dance & Music</h2>
-      <ul>
-        <li data-ng-repeat="location in settingsctrl.locations">
-          <a href="">{{ location.display }}</a>
-        </li>
-      </ul>
+      <div class="link-dropdown">
+        <a
+          data-ng-focus="settingsctrl.linkDropdown = true"
+          data-ng-blur="settingsctrl.linkDropdown = false"
+          href="#">
+          {{ settingsctrl.locations[0].display }}
+          <span class="icon-chevron"></span>
+        </a>
+        <ul data-ng-if="settingsctrl.linkDropdown" class="dropdown">
+          <li data-ng-repeat="location in settingsctrl.locations">
+            {{ location.display }}
+          </li>
+        </ul>
+      </div>
       <nav>
         <ul>
           <li><a href="#/dashboard"><span class="icon-dashboard"></span>Dashboard</a></li>
@@ -33,7 +42,7 @@
           <li><a href="#/logout"><span class="icon-logout"></span>Log Out</a></li>
         </ul>
       </nav>
-      <section>
+      <section class="settings">
         <h3>Studio Settings</h3>
         <nav>
           <ul>
@@ -45,26 +54,26 @@
             <li data-ng-click="settingsctrl.view = 'merchant'"><a href="#/settings/merchant">Merchant Account</a></li>
           </ul>
         </nav>
-        <section data-ng-if="settingsctrl.view === 'locations'">
+        <section data-ng-if="settingsctrl.view === 'locations'" class="location">
           <h4 class="hidden">Locations</h4>
           <ul>
-            <li data-ng-repeat="location in settingsctrl.locations">
-              <a href="">
-                <span data-ng-click="settingsctrl.edit(location)">
-                  {{ location.display }}
-                  <span class="icon-chevron"></span>
-                </span>
+            <li data-ng-repeat="location in settingsctrl.locations" class="location-item">
+              <a
+                data-ng-click="settingsctrl.edit(location)"
+                href="#/settings/locations/{{ location._id }}">
+                {{ location.display }}
+                <span class="icon-chevron"></span>
               </a>
 
-                <location-form
-                  data-ng-if="location.editing"
-                  data-location="location"
-                  data-states="settingsctrl.states">
-                </location-form>
+              <location-form
+                data-ng-if="location.editing"
+                data-location="location"
+                data-states="settingsctrl.states">
+              </location-form>
 
             </li>
-            <li>
-              <span class="icon-plus"></span>Create New Location
+            <li class="location-item">
+              <a href="#/settings/locations/create"><span class="icon-plus"></span>Create New Location</a>
             </li>
           </ul>
           <button

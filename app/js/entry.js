@@ -1,5 +1,4 @@
 const angular = require("angular");
-const ngRoute = require("angular-route");
-const studioApp = angular.module("studioApp", [ngRoute]);
+const studioApp = angular.module("studioApp", []);
 
 require("./settings")(studioApp);

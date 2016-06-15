@@ -38,8 +38,8 @@ Input Underline:                       #ABAFC3
 Underline Focus:                       #508DB4  
 Placeholder Text:                      Proxima Nova, Regular, 18pt; #ABAFC3  
 Chevron Focus:                         #508DB4  
-Dropdown Text:                         Usual, Regular, 14pt; #3A405B  
+Dropdown Text:                         Proxima Nova, Regular, 14pt; #3A405B  
 Dropdown Background:                   #FFFFFF
 Dropdown Selected Text:                #508DB4  
-Dropdown Selected Background:          #FDFDFD  
+Dropdown Selected Background:          #FAFCFC  
 Save Enabled Background:               #78AF3B  

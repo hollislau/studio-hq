@@ -1,3 +1,13 @@
+.app {
+  .link-dropdown {
+    width: 150px;
+    position: relative;
+    .dropdown {
+      width: 100%;
+    }
+  }
+}
+
 .hidden {
   position: absolute;
   left: -10000px;

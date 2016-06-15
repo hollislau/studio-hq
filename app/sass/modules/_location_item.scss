@@ -1,0 +1,16 @@
+.location-item {
+  font-size: $font-larger;
+  padding: 3rem 5%;
+  border-top: 2px solid border-color(form);
+  border-bottom: 2px solid border-color(form);
+  background-color: background-color(offset);
+  > a {
+    color: font-color(secondary);
+    > span {
+      margin-left: 1%;
+    }
+  }
+  > form {
+    margin-top: 1rem;
+  }
+}

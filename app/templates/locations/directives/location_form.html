@@ -62,7 +62,7 @@
     </select>
   </div>
   <div class="select short" aria-hidden="true">
-    <div>
+    <div data-ng-class="{ underline: location.chevronUp }">
       <label data-ng-show="location.state" for="state">State</label>
       <input
         data-ng-model="location.state"

@@ -2,6 +2,7 @@ body {
   font-family: $font-primary;
   color: font-color();
   background-color: background-color();
+  padding: calc(8% - 50px);
   width: 100%;
 }
 
@@ -51,7 +52,11 @@ button {
 
 a {
   color: inherit;
-  &:focus {
+  &:focus, &:hover {
     color: font-color(highlight);
   }
+}
+
+p {
+  display: inline-block;
 }

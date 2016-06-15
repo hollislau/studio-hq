@@ -1,1 +1,41 @@
-
+header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 3rem;
+  p {
+    font-size: $font-large;
+    font-weight: $font-heavy;
+    span {
+      color: font-color(blend);
+      margin: 0 7%;
+    }
+  }
+  img {
+    margin-right: calc(5% - 15px);
+  }
+  .link-dropdown {
+    display: inline-block;
+    position: relative;
+    a {
+      color: font-color(highlight);
+      &:hover {
+        color: font-color(hover);
+      }
+    }
+    .focus {
+      color: font-color(hover);
+      background: none;
+      .icon-chevron {
+        transform: rotate(180deg);
+      }
+    }
+    .dropdown {
+      margin-top: 0.2rem;
+      border-top: 2px solid border-color(highlight);
+      width: calc(100% - 20px);
+    }
+  }
+  .icon-chevron {
+    font-size: $font-tiny;
+  }
+}

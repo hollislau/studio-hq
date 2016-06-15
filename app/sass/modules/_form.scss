@@ -19,7 +19,7 @@ form {
     width: 55%;
   }
   .right {
-    margin-left: 3.5%;
+    margin-left: calc(5% - 20px);
     margin-right: 0;
   }
   .ng-hide:not(.ng-hide-animate) {
@@ -31,19 +31,22 @@ form {
   }
   .select {
     position: relative;
+    div {
+      border-bottom: 1px solid border-color(underline);
+    }
+    input {
+      border: none;
+    }
+    .underline {
+      border-bottom: 2px solid border-color(highlight);
+      input {
+        padding-bottom: calc(0.3em - 1px);
+      }
+    }
   }
   .icon-chevron {
-    border-bottom: 1px solid border-color(underline);
-    padding-bottom: 10px;
     margin-left: -6px;
     width: 20%;
-  }
-  .expanded {
-    border-bottom: none;
-    border-top: 2px solid border-color(highlight);
-    padding-bottom: 11px;
-    padding-top: 10px;
-    margin-top: -10px;
   }
   .dropdown {
     width: 100%

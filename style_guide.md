@@ -15,7 +15,7 @@ Text/Icon Focus:                       #508DB4
 ## Studio Menu
 Background:                            #FFFFFF  
 Borders:                               #E7EAF1  
-Settings:                              Proxima Nova, Regular, 30pt; #3A405B  
+Settings Header:                       Proxima Nova, Regular, 30pt; #3A405B  
 Secondary Nav Text:                    Proxima Nova, Regular, 16pt; #3A405B  
 Nav Text Focus:                        Proxima Nova, Semibold, 16pt; #508DB4  
 Underline Focus:                       #508DB4  

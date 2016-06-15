@@ -1,21 +1,21 @@
-.app {
-  .link-dropdown {
-    display: inline-block;
-    position: relative;
-    a {
-      color: font-color(highlight);
-      &:hover {
-        color: font-color(hover);
+main {
+  display: flex;
+  > section {
+    flex-grow: 1;
+  }
+  .main-nav {
+    font-size: $font-larger;
+    margin-right: calc(5% - 30px);
+    ul {
+      li {
+        margin-bottom: 1.5rem;
+        &:last-child {
+          margin-top: 4.5rem;
+        }
       }
     }
-    .focus {
-      color: font-color(hover);
-      .icon-chevron {
-        transform: rotate(180deg);
-      }
-    }
-    .dropdown {
-      width: calc(100% - 20px);
+    span {
+      margin-right: 10%;
     }
   }
 }

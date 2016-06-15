@@ -1,5 +1,4 @@
 .location {
-  background-color: background-color(secondary);
   button {
     width: 10rem;
     margin: 0 1%;
@@ -12,9 +11,6 @@
         color: font-color(hover);
       }
     }
-  }
-  .location-item {
-    margin-bottom: -2px;
   }
   .btn-container {
     display: flex;

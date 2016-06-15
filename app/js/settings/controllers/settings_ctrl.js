@@ -46,7 +46,10 @@ module.exports = function (app) {
 
     this.edit = function (location) {
       if (location.editing) return this.cancel();
-      if (this.focus) this.focus.editing = false;
+      if (this.focus) {
+        this.focus.editing = false;
+        this.cancel();
+      }
 
       location.backup = angular.copy(location);
       location.editing = true;

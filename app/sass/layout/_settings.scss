@@ -1,0 +1,23 @@
+.settings {
+  background-color: background-color(secondary);
+  border-radius: 4px;
+  box-shadow: 0 0 10px background-color(disabled);
+  h3 {
+    font-size: $font-huge;
+    padding: 2rem 5%;
+  }
+  .secondary-nav {
+    border-top: 2px solid border-color(form);
+    border-bottom: 2px solid border-color(form);
+    padding: 1rem 5%;
+    li {
+      display: inline-block;
+      margin-right: calc(8% - 40px);
+    }
+    .focus {
+      padding-bottom: 1rem;
+      margin-bottom: calc(-1rem - 4px);
+      border-bottom: 2px solid border-color(highlight);
+    }
+  }
+}

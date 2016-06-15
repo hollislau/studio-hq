@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="no-js" lang="en">
+<html data-ng-app="studioApp" class="no-js" lang="en">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -10,29 +10,32 @@
     <script>try{Typekit.load({ async: true });}catch(e){}</script>
     <link rel="stylesheet" href="css/main.css">
   </head>
-  <body data-ng-app="studioApp">
+  <body data-ng-controller="SettingsCtrl as settingsctrl">
     <header>
       <h1 class="hidden">StudioHQ</h1>
       <img src="images/logo.svg" alt="StudioHQ logo">
-    </header>
-    <main data-ng-controller="SettingsCtrl as settingsctrl" class="app">
-      <h2>Happy Dance & Music</h2>
-      <div class="link-dropdown">
-        <a
-          data-ng-focus="settingsctrl.linkDropdown = true"
-          data-ng-blur="settingsctrl.linkDropdown = false"
-          data-ng-class="{ focus: settingsctrl.linkDropdown }"
-          href="#">
-          {{ settingsctrl.locations[0].display }}
-          <span class="icon-chevron"></span>
-        </a>
-        <ul data-ng-if="settingsctrl.linkDropdown" class="dropdown">
-          <li data-ng-repeat="location in settingsctrl.locations">
-            {{ location.display }}
-          </li>
-        </ul>
+      <div>
+        <p>Happy Dance & Music <span>|</span></p>
+        <div class="link-dropdown">
+          <a
+            data-ng-focus="settingsctrl.linkDropdown = true"
+            data-ng-blur="settingsctrl.linkDropdown = false"
+            data-ng-class="{ focus: settingsctrl.linkDropdown }"
+            href="#">
+            {{ settingsctrl.locations[0].display }}
+            <span class="icon-chevron"></span>
+          </a>
+          <ul data-ng-if="settingsctrl.linkDropdown" class="dropdown">
+            <li data-ng-repeat="location in settingsctrl.locations">
+              {{ location.display }}
+            </li>
+          </ul>
+        </div>
       </div>
-      <nav>
+    </header>
+    <main>
+      <h2 class="hidden">Happy Dance & Music</h2>
+      <nav class="main-nav">
         <ul>
           <li><a href="#/dashboard"><span class="icon-dashboard"></span>Dashboard</a></li>
           <li><a href="#/classes"><span class="icon-classes"></span>Classes</a></li>
@@ -45,14 +48,38 @@
       </nav>
       <section class="settings">
         <h3>Studio Settings</h3>
-        <nav>
+        <nav class="secondary-nav">
           <ul>
-            <li data-ng-click="settingsctrl.view = 'company'"><a href="#/settings/company">Company</a></li>
-            <li data-ng-click="settingsctrl.view = 'locations'"><a href="#/settings/locations">Locations</a></li>
-            <li data-ng-click="settingsctrl.view = 'class'"><a href="#/settings/classes">Class Types</a></li>
-            <li data-ng-click="settingsctrl.view = 'managers'"><a href="#/settings/managers">Managers</a></li>
-            <li data-ng-click="settingsctrl.view = 'billing'"><a href="#/settings/billing">Billing Info</a></li>
-            <li data-ng-click="settingsctrl.view = 'merchant'"><a href="#/settings/merchant">Merchant Account</a></li>
+            <li
+              data-ng-click="settingsctrl.view = 'company'"
+              data-ng-class="{ focus: settingsctrl.view === 'company' }">
+              <a href="#/settings/company">Company</a>
+            </li>
+            <li
+              data-ng-click="settingsctrl.view = 'locations'"
+              data-ng-class="{ focus: settingsctrl.view === 'locations' }">
+              <a href="#/settings/locations">Locations</a>
+            </li>
+            <li
+              data-ng-click="settingsctrl.view = 'class'"
+              data-ng-class="{ focus: settingsctrl.view === 'class' }">
+              <a href="#/settings/classes">Class Types</a>
+            </li>
+            <li
+              data-ng-click="settingsctrl.view = 'managers'"
+              data-ng-class="{ focus: settingsctrl.view === 'managers' }">
+              <a href="#/settings/managers">Managers</a>
+            </li>
+            <li
+              data-ng-click="settingsctrl.view = 'billing'"
+              data-ng-class="{ focus: settingsctrl.view === 'billing' }">
+              <a href="#/settings/billing">Billing Info</a>
+            </li>
+            <li
+              data-ng-click="settingsctrl.view = 'merchant'"
+              data-ng-class="{ focus: settingsctrl.view === 'merchant' }">
+              <a href="#/settings/merchant">Merchant Account</a>
+            </li>
           </ul>
         </nav>
         <section data-ng-if="settingsctrl.view === 'locations'" class="location">

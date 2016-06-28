@@ -4,6 +4,7 @@ body {
   background-color: background-color();
   padding: calc(8% - 50px);
   width: 100%;
+  min-width: 750px;
 }
 
 input, button {
